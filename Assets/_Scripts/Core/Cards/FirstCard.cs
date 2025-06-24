@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class FirstCard
 {
-    public static List<ICardAction> GetSampleCards()
+    public static List<ICardAction> LoadCardsFromSO()
     {
-        return new List<ICardAction>
+        var cardSOs = Resources.LoadAll<ActionCardSO>("Cards");
+        var result = new List<ICardAction>();
+
+        foreach (var so in cardSOs)
         {
-            new HarvestCard(GemType.Yellow, GemType.Yellow),
-            new UpgradeCard(GemType.Yellow, GemType.Red),
-            new TradeCard(GemType.Red, GemType.Green)
-        };
+            result.Add(new CardActionFromSO(so));
+        }
+
+        return result;
     }
 }

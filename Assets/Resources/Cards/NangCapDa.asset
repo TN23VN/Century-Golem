@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8c982734ddb8c4b9c399ea4de5fe79, type: 3}
+  m_Name: NangCapDa
+  m_EditorClassIdentifier: 
+  cardName: "Nh\xE0 gi\u1EA3 kim"
+  icon: {fileID: 8775758688037301033, guid: 304b3a0fd4aad82459f1ab819a9fd98f, type: 3}
+  actionType: 0
+  gemsToAdd: 
+  upgradeFrom: 0
+  upgradeTo: 1
+  tradeFrom: -1
+  tradeTo: -1

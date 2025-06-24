@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentPlayer = new PlayerState("Người chơi 1");
-        hand = FirstCard.GetSampleCards();
+        hand = FirstCard.LoadCardsFromSO();
 
         UpdateUI();
     }
