@@ -2,5 +2,6 @@ using UnityEngine;
 
 public interface ICardAction
 {
-    void Execute(PlayerInventory inventory);
+    string CardName { get; }
+    void Execute(PlayerState player);
 }

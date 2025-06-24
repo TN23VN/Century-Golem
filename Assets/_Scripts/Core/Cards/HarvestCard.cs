@@ -1,16 +1,21 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HarvestCard : ICardAction
 {
-    private readonly int[] gems;
+    public string CardName => "Thu hoạch đá";
 
-    public HarvestCard(int[] gems)
+    private GemType[] gemsToAdd;
+
+    public HarvestCard(params GemType[] gems)
     {
-        this.gems = gems;
+        gemsToAdd = gems;
     }
 
-    public void Execute(PlayerInventory inventory)
+    public void Execute(PlayerState player)
     {
-        inventory.AddGems(gems);
+        foreach (var gem in gemsToAdd)
+        {
+            player.Inventory.AddGem(gem);
+        }
     }
 }

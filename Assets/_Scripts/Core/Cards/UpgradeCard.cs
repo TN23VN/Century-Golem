@@ -1,16 +1,20 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class UpgradeCard : MonoBehaviour
+public class UpgradeCard : ICardAction
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public string CardName => "Nâng cấp đá";
+
+    private GemType from, to;
+
+    public UpgradeCard(GemType from, GemType to)
     {
-        
+        this.from = from;
+        this.to = to;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Execute(PlayerState player)
     {
-        
+        if (player.Inventory.RemoveGem(from))
+            player.Inventory.AddGem(to);
     }
 }

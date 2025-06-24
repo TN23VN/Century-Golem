@@ -8,15 +8,15 @@ public class CardUI : MonoBehaviour
     public Text cardName;
     public Button playButton;
 
-    private ICardAction cardAction;
-    private Action<ICardAction> onPlay;
+    private Action onClick;
 
-    public void Setup(string name, Sprite sprite, ICardAction action, Action<ICardAction> callback)
+    public void Setup(string name, Sprite sprite, Action onClick)
     {
         cardName.text = name;
         icon.sprite = sprite;
-        cardAction = action;
-        onPlay = callback;
-        playButton.onClick.AddListener(() => onPlay?.Invoke(cardAction));
+        this.onClick = onClick;
+
+        playButton.onClick.RemoveAllListeners();
+        playButton.onClick.AddListener(() => onClick?.Invoke());
     }
 }
